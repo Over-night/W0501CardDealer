@@ -12,6 +12,27 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.card1.setImageResource(R.drawable.c_10_of_clubs)
+        binding.card1.setImageResource(R.drawable.c_king_of_clubs2
+    }
+    private fun getCardName(c:Int): String{
+        val shape = when(c/13) {
+            0 -> "spades"
+            1 -> "diamonds"
+            2 -> "hearts"
+            3 -> "clubs"
+            else -> "error"
+        }
+
+        val number = when (c%13) {
+            0 -> "ace"
+            in 1..9 -> (c%13+1).toString()
+            10 -> "jack"
+            11 -> "queen"
+            12 -> "king"
+            else -> "error"
+        }
+
+        // TODO : 스트링 반환
+
     }
 }
